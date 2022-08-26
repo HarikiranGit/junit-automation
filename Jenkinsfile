@@ -22,19 +22,6 @@ pipeline {
                 sh 'cd src/ ; java App' 
             }
         }
-		
-     	stage('post') {
-            always {
-            junit(
-			allowEmptyResults: true, 
-			testResults: 'src/reports/*-jupiter.xml'
-					)
-			recordIssues(
-          enabledForFailure: true, aggregatingResults: true, 
-          tools: [java(), checkStyle(pattern: 'src/reports/*-jupiter.xml', reportEncoding: 'UTF-8')]
-                        )
-                  }
-            }
     }
 
 }
