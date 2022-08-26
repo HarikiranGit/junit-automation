@@ -23,7 +23,7 @@ pipeline {
             }
         }
 		
-     	post {
+     	stage('post') {
             always {
             junit(
 			allowEmptyResults: true, 
