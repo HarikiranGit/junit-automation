@@ -16,6 +16,15 @@ pipeline {
                 junit 'src/reports/*-jupiter.xml'
             }
         }
+        
+        post {
+    always {
+        junit(
+          allowEmptyResults: true, 
+          testResults: 'src/reports/*-jupiter.xml'
+        )
+                }
+            }
 
         stage('Deploy'){
             steps{
