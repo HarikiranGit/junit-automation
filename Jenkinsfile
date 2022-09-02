@@ -17,7 +17,7 @@ pipeline {
             }
         }
         
-       post {
+            post {
                 always {
                     junit  allowEmptyResults: true, 'src/reports/*-jupiter.xml'
                 }
