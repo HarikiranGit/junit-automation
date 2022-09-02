@@ -30,7 +30,7 @@ pipeline {
     always {
         junit(
           allowEmptyResults: true, 
-          testResults:  '**/build/test-results/test/*.xml'
+          testResults:  'src/reports/*-jupiter.xml'
         )
         recordIssues(
           enabledForFailure: true, aggregatingResults: true, 
