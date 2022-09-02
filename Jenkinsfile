@@ -30,11 +30,11 @@ pipeline {
     always {
         junit(
           allowEmptyResults: true, 
-          testResults: 'src/reports/*-jupiter.xml'
+          testResults:  '**/build/test-results/test/*.xml'
         )
         recordIssues(
           enabledForFailure: true, aggregatingResults: true, 
-          tools: [java(), checkStyle(pattern: 'src/reports/*-jupiter.xml', reportEncoding: 'UTF-8')]
+          tools: [java(), checkStyle(pattern: '**/build/**/main.xml', reportEncoding: 'UTF-8')]
         )
     }
   }   
