@@ -1,12 +1,11 @@
 pipeline {
 
-    agent any
+    agent { label 'kube-agent' }
     stages {
         stage('Build'){
             steps{
                 
-                sh 'yum clean all' 
-                sh 'yum install wget'
+               
                 sh 'rm -d lib'
                 sh 'mkdir lib'
                 sh 'cd lib/ ; wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar'
