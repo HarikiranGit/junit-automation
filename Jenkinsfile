@@ -5,7 +5,7 @@ pipeline {
         stage('Build'){
             steps{
                 
-                sh 'sudo su-' 
+                sh 'yum clean all' 
                 sh 'yum install wget'
                 sh 'rm -d lib'
                 sh 'mkdir lib'
