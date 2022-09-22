@@ -9,7 +9,7 @@ pipeline {
                 
                 sh 'mkdir lib'
                 sh 'cd lib'
-                sh  'curl -H https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar > myfile.jar'
+                sh  'curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar -o myfile.jar'
                 sh 'cd src ; javac -cp "../lib/myfile.jar" CarTest.java Car.java App.java'
             }
         }
