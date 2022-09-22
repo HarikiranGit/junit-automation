@@ -1,6 +1,6 @@
 pipeline {
 
-    agent { label 'kube-agent' }
+    agent any 
     stages {
         stage('Build'){
             steps{
