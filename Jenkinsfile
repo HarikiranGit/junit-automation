@@ -1,6 +1,6 @@
 pipeline {
 
-    agent any { label 'Terraform-Agent' }
+    agent { label 'Terraform-Agent' }
         stages {
             stage('Build'){
             steps{
