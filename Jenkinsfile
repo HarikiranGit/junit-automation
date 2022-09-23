@@ -5,8 +5,6 @@ pipeline {
         stage('Build'){
             steps{
                 
-               
-                
                 sh 'rm -d lib'
                 sh 'mkdir lib'
                 sh 'cd lib'
@@ -18,8 +16,8 @@ pipeline {
 
         stage('Test'){
             steps{
-               // sh 'cd src/ ; java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class CarTest --reports-dir="reports"'
-                //junit 'src/reports/*-jupiter.xml'
+               sh 'cd src/ ; java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class CarTest --reports-dir="reports"'
+                junit 'src/reports/*-jupiter.xml'
             }
         }
         
@@ -27,7 +25,7 @@ pipeline {
 
         stage('Deploy'){
             steps{
-                //sh 'cd src/ ; java App' 
+                sh 'cd src/ ; java App' 
             }
         }
     }
